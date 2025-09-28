@@ -1,0 +1,90 @@
+[
+  {
+    "patient_id": 1,
+    "name": "John Cruz",
+    "age": 45,
+    "gender": "Male",
+    "visits": [
+      {
+        "visit_date": "2025-08-12",
+        "diagnosis": "Diabetes Type II",
+        "treatment": "Metformin 500mg daily",
+        "doctor": "Dr. Santos",
+        "notes": "Advised low-carb diet and regular exercise."
+      },
+      {
+        "visit_date": "2025-09-10",
+        "diagnosis": "Diabetes Type II",
+        "treatment": "Increased Metformin dosage to 850mg",
+        "doctor": "Dr. Santos",
+        "notes": "Blood sugar levels still above target."
+      }
+    ]
+  },
+  {
+    "patient_id": 2,
+    "name": "Ana Gomez",
+    "age": 32,
+    "gender": "Female",
+    "visits": [
+      {
+        "visit_date": "2025-08-15",
+        "diagnosis": "Hypertension Stage 1",
+        "treatment": "Losartan 50mg daily",
+        "doctor": "Dr. Dela Cruz",
+        "notes": "Encouraged lifestyle modifications."
+      },
+      {
+        "visit_date": "2025-09-05",
+        "diagnosis": "Hypertension Stage 1",
+        "treatment": "Continue Losartan 50mg",
+        "doctor": "Dr. Dela Cruz",
+        "notes": "BP improved; maintain current plan."
+      }
+    ]
+  },
+  {
+    "patient_id": 3,
+    "name": "Luis Ramos",
+    "age": 60,
+    "gender": "Male",
+    "visits": [
+      {
+        "visit_date": "2025-08-16",
+        "diagnosis": "Asthma",
+        "treatment": "Salbutamol inhaler as needed",
+        "doctor": "Dr. Reyes",
+        "notes": "Mild wheezing observed."
+      },
+      {
+        "visit_date": "2025-09-12",
+        "diagnosis": "Asthma",
+        "treatment": "Added corticosteroid inhaler",
+        "doctor": "Dr. Reyes",
+        "notes": "Frequent night symptoms reported."
+      }
+    ]
+  },
+  {
+    "patient_id": 4,
+    "name": "Maria Santos",
+    "age": 27,
+    "gender": "Female",
+    "visits": [
+      {
+        "visit_date": "2025-08-20",
+        "diagnosis": "Migraine",
+        "treatment": "Paracetamol 500mg, rest",
+        "doctor": "Dr. Tan",
+        "notes": "Stress-related triggers suspected."
+      },
+      {
+        "visit_date": "2025-09-18",
+        "diagnosis": "Migraine",
+        "treatment": "Prescribed Sumatriptan",
+        "doctor": "Dr. Tan",
+        "notes": "Frequency increased; follow-up scheduled."
+      }
+    ]
+  }
+]

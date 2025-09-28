@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "name": "Maria Santos",
+    "section": "7-Ampere",
+    "subjects": {
+      "Math2": 1.5,
+      "Math3": 1.75,
+      "Biology1": 2.0,
+      "Chem1": 1.25,
+      "Physics1": 1.75,
+      "Computer Science2": 1.25,
+      "PEHM2": 1.0,
+      "VE2": 1.75,
+      "Social Science2": 1.5,
+      "English2": 1.25,
+      "Filipino2": 1.75
+    }
+  },
+  {
+    "id": 2,
+    "name": "Juan Dela Cruz",
+    "section": "7-Curie",
+    "subjects": {
+      "Math2": 2.5,
+      "Math3": 2.75,
+      "Biology1": 2.0,
+      "Chem1": 2.25,
+      "Physics1": 2.5,
+      "Computer Science2": 2.0,
+      "PEHM2": 1.75,
+      "VE2": 2.5,
+      "Social Science2": 2.25,
+      "English2": 2.0,
+      "Filipino2": 2.75
+    }
+  },
+  {
+    "id": 3,
+    "name": "Ana Reyes",
+    "section": "7-Rutherford",
+    "subjects": {
+      "Math2": 1.0,
+      "Math3": 1.25,
+      "Biology1": 1.5,
+      "Chem1": 1.0,
+      "Physics1": 1.25,
+      "Computer Science2": 1.0,
+      "PEHM2": 1.25,
+      "VE2": 1.25,
+      "Social Science2": 1.0,
+      "English2": 1.25,
+      "Filipino2": 1.5
+    }
+  },
+  {
+    "id": 4,
+    "name": "Carlo Mendoza",
+    "section": "7-Newton",
+    "subjects": {
+      "Math2": 2.75,
+      "Math3": 3.0,
+      "Biology1": 2.5,
+      "Chem1": 2.75,
+      "Physics1": 2.5,
+      "Computer Science2": 2.25,
+      "PEHM2": 2.0,
+      "VE2": 2.5,
+      "Social Science2": 2.25,
+      "English2": 2.75,
+      "Filipino2": 2.5
+    }
+  },
+  {
+    "id": 5,
+    "name": "Liza Villanueva",
+    "section": "7-Ampere",
+    "subjects": {
+      "Math2": 1.25,
+      "Math3": 1.5,
+      "Biology1": 1.75,
+      "Chem1": 1.25,
+      "Physics1": 1.5,
+      "Computer Science2": 1.0,
+      "PEHM2": 1.25,
+      "VE2": 1.0,
+      "Social Science2": 1.25,
+      "English2": 1.25,
+      "Filipino2": 1.5
+    }
+  },
+  {
+    "id": 6,
+    "name": "Pedro Cruz",
+    "section": "7-Curie",
+    "subjects": {
+      "Math2": 3.0,
+      "Math3": 2.75,
+      "Biology1": 2.5,
+      "Chem1": 3.0,
+      "Physics1": 2.75,
+      "Computer Science2": 2.5,
+      "PEHM2": 2.0,
+      "VE2": 2.5,
+      "Social Science2": 2.75,
+      "English2": 3.0,
+      "Filipino2": 2.75
+    }
+  },
+  {
+    "id": 7,
+    "name": "Sofia Ramos",
+    "section": "7-Rutherford",
+    "subjects": {
+      "Math2": 1.75,
+      "Math3": 2.0,
+      "Biology1": 2.25,
+      "Chem1": 2.0,
+      "Physics1": 1.75,
+      "Computer Science2": 1.5,
+      "PEHM2": 1.25,
+      "VE2": 1.75,
+      "Social Science2": 2.0,
+      "English2": 1.5,
+      "Filipino2": 1.75
+    }
+  },
+  {
+    "id": 8,
+    "name": "Miguel Torres",
+    "section": "7-Newton",
+    "subjects": {
+      "Math2": 2.25,
+      "Math3": 2.5,
+      "Biology1": 2.75,
+      "Chem1": 2.5,
+      "Physics1": 2.25,
+      "Computer Science2": 2.0,
+      "PEHM2": 2.25,
+      "VE2": 2.0,
+      "Social Science2": 2.25,
+      "English2": 2.5,
+      "Filipino2": 2.75
+    }
+  },
+  {
+    "id": 9,
+    "name": "Grace Lim",
+    "section": "7-Ampere",
+    "subjects": {
+      "Math2": 1.0,
+      "Math3": 1.25,
+      "Biology1": 1.0,
+      "Chem1": 1.25,
+      "Physics1": 1.0,
+      "Computer Science2": 1.0,
+      "PEHM2": 1.25,
+      "VE2": 1.0,
+      "Social Science2": 1.25,
+      "English2": 1.0,
+      "Filipino2": 1.25
+    }
+  },
+  {
+    "id": 10,
+    "name": "Andrei Bautista",
+    "section": "7-Curie",
+    "subjects": {
+      "Math2": 2.5,
+      "Math3": 2.75,
+      "Biology1": 3.0,
+      "Chem1": 2.5,
+      "Physics1": 2.25,
+      "Computer Science2": 2.5,
+      "PEHM2": 2.25,
+      "VE2": 2.75,
+      "Social Science2": 3.0,
+      "English2": 2.75,
+      "Filipino2": 2.5
+    }
+  }
+]

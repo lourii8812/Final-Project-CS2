@@ -1,0 +1,94 @@
+[
+  {
+    "order_id": 1,
+    "customer": "Alice Brown",
+    "order_date": "2025-08-01",
+    "status": "Delivered",
+    "payment_method": "Credit Card",
+    "shipping_address": "123 Main St, Quezon City",
+    "items": [
+      {
+        "product": "Headphones",
+        "category": "Electronics",
+        "price": 1500,
+        "quantity": 1
+      },
+      {
+        "product": "USB-C Cable",
+        "category": "Accessories",
+        "price": 250,
+        "quantity": 2
+      }
+    ],
+    "total_amount": 2000
+  },
+  {
+    "order_id": 2,
+    "customer": "Bob White",
+    "order_date": "2025-08-03",
+    "status": "Pending",
+    "payment_method": "Cash on Delivery",
+    "shipping_address": "45 Mabini St, Davao City",
+    "items": [
+      {
+        "product": "Smartphone",
+        "category": "Electronics",
+        "price": 22000,
+        "quantity": 1
+      },
+      {
+        "product": "Phone Case",
+        "category": "Accessories",
+        "price": 500,
+        "quantity": 1
+      }
+    ],
+    "total_amount": 22500
+  },
+  {
+    "order_id": 3,
+    "customer": "Charlie Green",
+    "order_date": "2025-08-05",
+    "status": "Delivered",
+    "payment_method": "GCash",
+    "shipping_address": "78 Rizal Ave, Cebu City",
+    "items": [
+      {
+        "product": "Book",
+        "category": "Books",
+        "price": 450,
+        "quantity": 1
+      },
+      {
+        "product": "Notebook Set",
+        "category": "Stationery",
+        "price": 300,
+        "quantity": 2
+      }
+    ],
+    "total_amount": 1050
+  },
+  {
+    "order_id": 4,
+    "customer": "Diana Lopez",
+    "order_date": "2025-08-07",
+    "status": "Shipped",
+    "payment_method": "Debit Card",
+    "shipping_address": "56 Bonifacio St, Baguio City",
+    "items": [
+      {
+        "product": "Running Shoes",
+        "category": "Sportswear",
+        "price": 3500,
+        "quantity": 1
+      },
+      {
+        "product": "Water Bottle",
+        "category": "Accessories",
+        "price": 600,
+        "quantity": 1
+      }
+    ],
+    "total_amount": 4100
+  }
+]

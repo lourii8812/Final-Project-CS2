@@ -1,0 +1,98 @@
+[
+  {
+    "borrower_id": 1,
+    "student": "Carlos Mendoza",
+    "books": [
+      {
+        "book_title": "Introduction to Python",
+        "author": "Guido van Rossum",
+        "borrow_date": "2025-08-20",
+        "return_date": "2025-09-01"
+      },
+      {
+        "book_title": "Advanced Algebra",
+        "author": "Richard Brown",
+        "borrow_date": "2025-09-10",
+        "return_date": "2025-09-20"
+      },
+      {
+        "book_title": "World History Volume 1",
+        "author": "Arthur Kemp",
+        "borrow_date": "2025-09-15",
+        "return_date": null
+      }
+    ]
+  },
+  {
+    "borrower_id": 2,
+    "student": "Ella Cruz",
+    "books": [
+      {
+        "book_title": "Data Science for Beginners",
+        "author": "Jane Smith",
+        "borrow_date": "2025-09-05",
+        "return_date": "2025-09-12"
+      },
+      {
+        "book_title": "Creative Writing Essentials",
+        "author": "Maria Johnson",
+        "borrow_date": "2025-09-10",
+        "return_date": null
+      },
+      {
+        "book_title": "Physics Fundamentals",
+        "author": "Isaac Newton",
+        "borrow_date": "2025-09-18",
+        "return_date": null
+      }
+    ]
+  },
+  {
+    "borrower_id": 3,
+    "student": "Mark Dela Peña",
+    "books": [
+      {
+        "book_title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "borrow_date": "2025-09-07",
+        "return_date": null
+      },
+      {
+        "book_title": "Introduction to Philosophy",
+        "author": "Socrates",
+        "borrow_date": "2025-09-12",
+        "return_date": "2025-09-20"
+      },
+      {
+        "book_title": "Modern JavaScript",
+        "author": "Brendan Eich",
+        "borrow_date": "2025-09-18",
+        "return_date": null
+      }
+    ]
+  },
+  {
+    "borrower_id": 4,
+    "student": "Sofia Ramos",
+    "books": [
+      {
+        "book_title": "Calculus Made Easy",
+        "author": "Silvanus P. Thompson",
+        "borrow_date": "2025-08-28",
+        "return_date": "2025-09-05"
+      },
+      {
+        "book_title": "English Literature Classics",
+        "author": "William Shakespeare",
+        "borrow_date": "2025-09-08",
+        "return_date": null
+      },
+      {
+        "book_title": "Database Systems",
+        "author": "C. J. Date",
+        "borrow_date": "2025-09-15",
+        "return_date": null
+      }
+    ]
+  }
+]

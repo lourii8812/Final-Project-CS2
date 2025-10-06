@@ -1,3 +1,5 @@
+# Title: WEATHER DATABASE INQUIRY
+
 # Problem statement:
 
 Weather affects our daily activities, but raw weather data can be hard to understand. This project aims to create a Python program that reads and analyzes weather information from a JSON file. It will help users easily view important details like temperature, rainfall. Humidity and weather conditions, allowing them to observe patterns and make better decisions based on the week’s weather.
@@ -76,7 +78,7 @@ Logic Plan:
 
 Start Program
 
-Load JSON file "weather_data.json"
+Load JSON file "weather.json"
 
 Display Main Menu:
 

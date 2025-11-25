@@ -18,7 +18,7 @@ The goal of creating a JSON file that analyzes weather is to keep the data simpl
 
 # Logic plan:
 Input  Logic plan:
-I  1.   Read JSON file:
+I. Read JSON file:
 - load weather data from the JSON file:
 -Get user input:
 - ask the user for a specific date or range of dates

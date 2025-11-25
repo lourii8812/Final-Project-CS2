@@ -18,6 +18,7 @@ The goal of creating a JSON file that analyzes weather is to keep the data simpl
 
 # Logic plan:
 Input  Logic plan:
+
 I. Read JSON file:
 - load weather data from the JSON file:
 -Get user input:
@@ -130,7 +131,9 @@ Else if choice == 7:
 
 Else:
     - Display “Invalid option, please try again.”
-```
 End Program
+```
+Flowchart description guide:
+
 # Github link:
 https://github.com/lourii8812/Final-Project-CS2

@@ -133,7 +133,179 @@ Else:
     - Display “Invalid option, please try again.”
 End Program
 ```
-Flowchart description guide:
+Python Code:
+```
+weather_data = [
+    {
+        "date": "2025-09-01",
+        "temperature": {"min": 27, "max": 33, "avg": 30},
+        "rainfall_mm": 5,
+        "humidity": 70,
+        "wind_speed_kmh": 12,
+        "wind_direction": "NE",
+        "pressure_hpa": 1010,
+        "condition": "Partly Cloudy"
+    },
+    {
+        "date": "2025-09-02",
+        "temperature": {"min": 29, "max": 35, "avg": 32},
+        "rainfall_mm": 0,
+        "humidity": 65,
+        "wind_speed_kmh": 10,
+        "wind_direction": "E",
+        "pressure_hpa": 1008,
+        "condition": "Sunny"
+    },
+    {
+        "date": "2025-09-03",
+        "temperature": {"min": 25, "max": 30, "avg": 28},
+        "rainfall_mm": 12,
+        "humidity": 85,
+        "wind_speed_kmh": 20,
+        "wind_direction": "SW",
+        "pressure_hpa": 1005,
+        "condition": "Rainy"
+    },
+    {
+        "date": "2025-09-04",
+        "temperature": {"min": 26, "max": 31, "avg": 29},
+        "rainfall_mm": 30,
+        "humidity": 90,
+        "wind_speed_kmh": 25,
+        "wind_direction": "W",
+        "pressure_hpa": 1002,
+        "condition": "Thunderstorm"
+    },
+    {
+        "date": "2025-09-05",
+        "temperature": {"min": 28, "max": 34, "avg": 31},
+        "rainfall_mm": 2,
+        "humidity": 68,
+        "wind_speed_kmh": 15,
+        "wind_direction": "SE",
+        "pressure_hpa": 1007,
+        "condition": "Sunny"
+    },
+    {
+        "date": "2025-09-06",
+        "temperature": {"min": 27, "max": 32, "avg": 30},
+        "rainfall_mm": 8,
+        "humidity": 75,
+        "wind_speed_kmh": 18,
+        "wind_direction": "N",
+        "pressure_hpa": 1009,
+        "condition": "Cloudy"
+    },
+    {
+        "date": "2025-09-07",
+        "temperature": {"min": 26, "max": 33, "avg": 29},
+        "rainfall_mm": 15,
+        "humidity": 82,
+        "wind_speed_kmh": 22,
+        "wind_direction": "NW",
+        "pressure_hpa": 1004,
+        "condition": "Rainy"
+    }
+]
+def find_by_date(date_str):
+    for entry in weather_data:
+        if entry["date"] == date_str:
+            return entry
+    return None
+while True:
+    print("\n===== WEATHER MENU =====")
+    print("1. View weather details by date")
+    print("2. Search dates by condition")
+    print("3. Find hottest & coldest days")
+    print("4. View wind info by date")
+    print("5. Check humidity level by date")
+    print("6. Weekly summary report")
+    print("7. Exit")
+    
+    choice = input("Enter your choice: ")
+    if choice == "1":
+        date = input("Enter date (YYYY-MM-DD): ")
+        entry = find_by_date(date)
 
+        if entry:
+            print("\nWeather on", date)
+            print("Temperature:")
+            print("  Min:", entry["temperature"]["min"])
+            print("  Max:", entry["temperature"]["max"])
+            print("  Average:", entry["temperature"]["avg"])
+            print("Rainfall (mm):", entry["rainfall_mm"])
+            print("Humidity (%):", entry["humidity"])
+            print("Wind:", entry["wind_speed_kmh"], "km/h", entry["wind_direction"])
+            print("Pressure (hPa):", entry["pressure_hpa"])
+            print("Condition:", entry["condition"])
+        else:
+            print("Date not found.")
+    elif choice == "2":
+        cond = input("Enter condition (e.g., Sunny, Rainy): ").lower()
+        matches = [d["date"] for d in weather_data if d["condition"].lower() == cond]
+
+        if matches:
+            print("Dates with condition", cond.capitalize() + ":")
+            for d in matches:
+                print("-", d)
+        else:
+            print("No matching dates found.")
+    elif choice == "3":
+        max_temp = max(weather_data, key=lambda x: x["temperature"]["max"])["temperature"]["max"]
+        min_temp = min(weather_data, key=lambda x: x["temperature"]["min"])["temperature"]["min"]
+
+        hottest_days = [d for d in weather_data if d["temperature"]["max"] == max_temp]
+        coldest_days = [d for d in weather_data if d["temperature"]["min"] == min_temp]
+
+        print("\nHottest day(s):")
+        for d in hottest_days:
+            print(f"{d['date']} - {max_temp}°C - {d['condition']}")
+
+        print("\nColdest day(s):")
+        for d in coldest_days:
+            print(f"{d['date']} - {min_temp}°C - {d['condition']}")
+    elif choice == "4":
+        date = input("Enter date (YYYY-MM-DD): ")
+        entry = find_by_date(date)
+
+        if entry:
+            print("\nWind on", date)
+            print("Direction:", entry["wind_direction"])
+            print("Speed:", entry["wind_speed_kmh"], "km/h")
+        else:
+            print("Date not found.")
+    elif choice == "5":
+        date = input("Enter date (YYYY-MM-DD): ")
+        entry = find_by_date(date)
+
+        if entry:
+            humidity = entry["humidity"]
+            status = "High" if humidity >= 75 else "Low"
+
+            print("\nHumidity on", date)
+            print("Humidity:", humidity, "%")
+            print("Status:", status)
+        else:
+            print("Date not found.")
+    elif choice == "6":
+        avg_temps = [d["temperature"]["avg"] for d in weather_data]
+        avg_humidity = [d["humidity"] for d in weather_data]
+        rain = [d["rainfall_mm"] for d in weather_data]
+        conditions = [d["condition"] for d in weather_data]
+
+        most_common_condition = max(set(conditions), key=conditions.count)
+
+        print("\n===== WEEKLY SUMMARY =====")
+        print("Average Temperature:", round(sum(avg_temps) / len(avg_temps), 2), "°C")
+        print("Average Humidity:", round(sum(avg_humidity) / len(avg_humidity), 2), "%")
+        print("Total Rainfall:", sum(rain), "mm")
+        print("Most Common Condition:", most_common_condition)
+    elif choice == "7":
+        print("Exiting program...")
+        print("Program exited. Goodbye!")
+        break
+    else:
+        print("Invalid option, please try again.")
+```
 # Github link:
 https://github.com/lourii8812/Final-Project-CS2

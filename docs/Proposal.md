@@ -125,8 +125,9 @@ Else if choice == 6:
     - Include average temperature, average humidity, total rainfall, and most common weather condition
     - Help users observe general weather patterns for the week
 
-Else if choice == 7:
+Else if choice == 0:
     - Display “Exiting program...”
+    - Display "Program exited. Goodbye!"
     - End the loop
 
 Else:
@@ -135,78 +136,17 @@ End Program
 ```
 Python Code:
 ```
-weather_data = [
-    {
-        "date": "2025-09-01",
-        "temperature": {"min": 27, "max": 33, "avg": 30},
-        "rainfall_mm": 5,
-        "humidity": 70,
-        "wind_speed_kmh": 12,
-        "wind_direction": "NE",
-        "pressure_hpa": 1010,
-        "condition": "Partly Cloudy"
-    },
-    {
-        "date": "2025-09-02",
-        "temperature": {"min": 29, "max": 35, "avg": 32},
-        "rainfall_mm": 0,
-        "humidity": 65,
-        "wind_speed_kmh": 10,
-        "wind_direction": "E",
-        "pressure_hpa": 1008,
-        "condition": "Sunny"
-    },
-    {
-        "date": "2025-09-03",
-        "temperature": {"min": 25, "max": 30, "avg": 28},
-        "rainfall_mm": 12,
-        "humidity": 85,
-        "wind_speed_kmh": 20,
-        "wind_direction": "SW",
-        "pressure_hpa": 1005,
-        "condition": "Rainy"
-    },
-    {
-        "date": "2025-09-04",
-        "temperature": {"min": 26, "max": 31, "avg": 29},
-        "rainfall_mm": 30,
-        "humidity": 90,
-        "wind_speed_kmh": 25,
-        "wind_direction": "W",
-        "pressure_hpa": 1002,
-        "condition": "Thunderstorm"
-    },
-    {
-        "date": "2025-09-05",
-        "temperature": {"min": 28, "max": 34, "avg": 31},
-        "rainfall_mm": 2,
-        "humidity": 68,
-        "wind_speed_kmh": 15,
-        "wind_direction": "SE",
-        "pressure_hpa": 1007,
-        "condition": "Sunny"
-    },
-    {
-        "date": "2025-09-06",
-        "temperature": {"min": 27, "max": 32, "avg": 30},
-        "rainfall_mm": 8,
-        "humidity": 75,
-        "wind_speed_kmh": 18,
-        "wind_direction": "N",
-        "pressure_hpa": 1009,
-        "condition": "Cloudy"
-    },
-    {
-        "date": "2025-09-07",
-        "temperature": {"min": 26, "max": 33, "avg": 29},
-        "rainfall_mm": 15,
-        "humidity": 82,
-        "wind_speed_kmh": 22,
-        "wind_direction": "NW",
-        "pressure_hpa": 1004,
-        "condition": "Rainy"
-    }
-]
+import json
+
+file_path = "jsonfile.json"
+try:
+    with open(file_path, 'r') as file:
+        weather_data = json.load(file)
+    print("JSON data successfully loaded")
+except FileNotFoundError:
+    print(f"Error: The file '{file_path}' was not found.")
+except json.JSONDecodeError:
+    print(f"Error: Could not decode JSON from '{file_path}'. Check file format.")
 def find_by_date(date_str):
     for entry in weather_data:
         if entry["date"] == date_str:
@@ -214,13 +154,13 @@ def find_by_date(date_str):
     return None
 while True:
     print("\n===== WEATHER MENU =====")
-    print("1. View weather details by date")
-    print("2. Search dates by condition")
-    print("3. Find hottest & coldest days")
-    print("4. View wind info by date")
-    print("5. Check humidity level by date")
-    print("6. Weekly summary report")
-    print("7. Exit")
+    print("[1] View weather details by date")
+    print("[2] Search dates by condition")
+    print("[3] Find hottest & coldest days")
+    print("[4] View wind info by date")
+    print("[5] Check humidity level by date")
+    print("[6] Weekly summary report")
+    print("[0] Exit")
     
     choice = input("Enter your choice: ")
     if choice == "1":
@@ -300,7 +240,7 @@ while True:
         print("Average Humidity:", round(sum(avg_humidity) / len(avg_humidity), 2), "%")
         print("Total Rainfall:", sum(rain), "mm")
         print("Most Common Condition:", most_common_condition)
-    elif choice == "7":
+    elif choice == "0":
         print("Exiting program...")
         print("Program exited. Goodbye!")
         break

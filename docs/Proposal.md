@@ -60,7 +60,7 @@ I. Read JSON file:
   3.   Handle data errors
 
 # User interaction
-  1.   User-friendly out
+  1.   User-friendly output
 
 
 Input:

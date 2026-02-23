@@ -136,22 +136,23 @@ End Program
 ```
 Python Code:
 ```
-import json
+import requests
+from collections import Counter
 
-file_path = "jsonfile.json"
+url = "https://github.com/lourii8812/Final-Project-CS2/raw/refs/heads/main/data/weather.json"
 try:
-    with open(file_path, 'r') as file:
-        weather_data = json.load(file)
-    print("JSON data successfully loaded")
-except FileNotFoundError:
-    print(f"Error: The file '{file_path}' was not found.")
-except json.JSONDecodeError:
-    print(f"Error: Could not decode JSON from '{file_path}'. Check file format.")
+    response = requests.get(url)
+    response.raise_for_status()
+    weather_data = response.json()
+except requests.exceptions.RequestException as e:
+    print("Error fetching JSON:", e)
+    weather_data = []
+
+weather_dict = {entry["date"]: entry for entry in weather_data}
+
 def find_by_date(date_str):
-    for entry in weather_data:
-        if entry["date"] == date_str:
-            return entry
-    return None
+    return weather_dict.get(date_str, None)
+
 while True:
     print("\n===== WEATHER MENU =====")
     print("[1] View weather details by date")
@@ -163,87 +164,95 @@ while True:
     print("[0] Exit")
     
     choice = input("Enter your choice: ")
+    
     if choice == "1":
         date = input("Enter date (YYYY-MM-DD): ")
         entry = find_by_date(date)
-
         if entry:
-            print("\nWeather on", date)
+            print(f"\nWeather on {date}:")
             print("Temperature:")
-            print("  Min:", entry["temperature"]["min"])
-            print("  Max:", entry["temperature"]["max"])
-            print("  Average:", entry["temperature"]["avg"])
-            print("Rainfall (mm):", entry["rainfall_mm"])
-            print("Humidity (%):", entry["humidity"])
-            print("Wind:", entry["wind_speed_kmh"], "km/h", entry["wind_direction"])
-            print("Pressure (hPa):", entry["pressure_hpa"])
-            print("Condition:", entry["condition"])
+            print(f"  Min: {entry['temperature']['min']}°C")
+            print(f"  Max: {entry['temperature']['max']}°C")
+            print(f"  Average: {entry['temperature']['avg']}°C")
+            print(f"Rainfall: {entry['rainfall_mm']} mm")
+            print(f"Humidity: {entry['humidity']}%")
+            print(f"Wind: {entry['wind_speed_kmh']} km/h, {entry['wind_direction']}")
+            print(f"Pressure: {entry['pressure_hpa']} hPa")
+            print(f"Condition: {entry['condition']}")
         else:
-            print("Date not found.")
+            print("Date not found. Please select the days in the first week of September.")
+
     elif choice == "2":
         cond = input("Enter condition (e.g., Sunny, Rainy): ").lower()
         matches = [d["date"] for d in weather_data if d["condition"].lower() == cond]
-
         if matches:
-            print("Dates with condition", cond.capitalize() + ":")
+            print("Dates with condition " + cond.capitalize() + ":")
             for d in matches:
                 print("-", d)
         else:
             print("No matching dates found.")
+
     elif choice == "3":
+        if not weather_data:
+            print("No data available.")
+            continue
         max_temp = max(weather_data, key=lambda x: x["temperature"]["max"])["temperature"]["max"]
         min_temp = min(weather_data, key=lambda x: x["temperature"]["min"])["temperature"]["min"]
-
         hottest_days = [d for d in weather_data if d["temperature"]["max"] == max_temp]
         coldest_days = [d for d in weather_data if d["temperature"]["min"] == min_temp]
-
         print("\nHottest day(s):")
         for d in hottest_days:
             print(f"{d['date']} - {max_temp}°C - {d['condition']}")
-
         print("\nColdest day(s):")
         for d in coldest_days:
             print(f"{d['date']} - {min_temp}°C - {d['condition']}")
+
     elif choice == "4":
         date = input("Enter date (YYYY-MM-DD): ")
         entry = find_by_date(date)
-
         if entry:
-            print("\nWind on", date)
-            print("Direction:", entry["wind_direction"])
-            print("Speed:", entry["wind_speed_kmh"], "km/h")
+            print(f"\nWind on {date}:")
+            print(f"Direction: {entry['wind_direction']}")
+            print(f"Speed: {entry['wind_speed_kmh']} km/h")
         else:
             print("Date not found.")
+
     elif choice == "5":
         date = input("Enter date (YYYY-MM-DD): ")
         entry = find_by_date(date)
-
         if entry:
             humidity = entry["humidity"]
-            status = "High" if humidity >= 75 else "Low"
-
-            print("\nHumidity on", date)
-            print("Humidity:", humidity, "%")
-            print("Status:", status)
+            if humidity >= 75:
+                status = "High"
+            elif humidity >= 40:
+                status = "Medium"
+            else:
+                status = "Low"
+            print(f"\nHumidity on {date}: {humidity}% - {status}")
         else:
             print("Date not found.")
+
     elif choice == "6":
+        if not weather_data:
+            print("No data available.")
+            continue
         avg_temps = [d["temperature"]["avg"] for d in weather_data]
         avg_humidity = [d["humidity"] for d in weather_data]
         rain = [d["rainfall_mm"] for d in weather_data]
         conditions = [d["condition"] for d in weather_data]
-
-        most_common_condition = max(set(conditions), key=conditions.count)
-
+        counter = Counter(conditions)
+        max_count = max(counter.values())
+        most_common = [cond for cond, count in counter.items() if count == max_count]
         print("\n===== WEEKLY SUMMARY =====")
-        print("Average Temperature:", round(sum(avg_temps) / len(avg_temps), 2), "°C")
-        print("Average Humidity:", round(sum(avg_humidity) / len(avg_humidity), 2), "%")
-        print("Total Rainfall:", sum(rain), "mm")
-        print("Most Common Condition:", most_common_condition)
+        print(f"Average Temperature: {round(sum(avg_temps)/len(avg_temps), 2)}°C")
+        print(f"Average Humidity: {round(sum(avg_humidity)/len(avg_humidity), 2)}%")
+        print(f"Total Rainfall: {sum(rain)} mm")
+        print("Most Common Condition:", ", ".join(most_common))
+
     elif choice == "0":
-        print("Exiting program...")
-        print("Program exited. Goodbye!")
+        print("Exiting program... Goodbye!")
         break
+
     else:
         print("Invalid option, please try again.")
 ```

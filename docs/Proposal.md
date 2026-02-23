@@ -82,15 +82,16 @@ Start Program
 Load JSON file "weather.json"
 
 Display Main Menu:
-
-    1. Check weather details for a specific date
-    2. Find all dates with a specific weather condition
-    3. Identify hottest and coldest days
-    4. Check wind direction for a specific date
-    5. Determine humidity level (High or Low)
-    6. Show weekly weather summary
-    7. Exit program
-
+```
+===== WEATHER MENU =====
+[1] View weather details by date
+[2] Search dates by condition
+[3] Find hottest & coldest days
+[4] View wind info by date
+[5] Check humidity level by date
+[6] Weekly summary report
+[0] Exit
+```
 Repeat until user chooses Exit:
     Ask for user choice
 ```

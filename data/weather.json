@@ -69,14 +69,4 @@
     "pressure_hpa": 1004,
     "condition": "Rainy"
   },
-  {
-    "date": "2025-09-08",
-    "temperature": { "min": 24, "max": 31, "avg": 28 },
-    "rainfall_mm": 19,
-    "humidity": 89,
-    "wind_speed_kmh": 24,
-    "wind_direction": "S",
-    "pressure_hpa": 1005,
-    "condition": "Rainy"
-  }
 ]
